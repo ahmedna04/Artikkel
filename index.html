@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettsvindel i Norge - 2,13 milliarder tapt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>2,13 milliarder kroner tapt til nettsvindel</h1>
+        <div class="hero-stats">
+            <div class="hero-stat-item">
+                <div class="hero-stat-number">2,13 mrd kr</div>
+                <div class="hero-stat-label">Tapt i 2024</div>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-item">
+                <div class="hero-stat-number">+150%</div>
+                <div class="hero-stat-label">Økning siden 2020</div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div class="scroll-arrow">↓</div>
+    </div>
+</header>
+
+<main>
+    <div class="sidebar-stats" id="sidebarStats">
+        <div class="sidebar-stat">
+            <div class="sidebar-number">1,2 mill</div>
+            <div class="sidebar-label">Nordmenn rammet</div>
+        </div>
+        <div class="sidebar-stat">
+            <div class="sidebar-number">70%</div>
+            <div class="sidebar-label">Digitale bedragerier</div>
+        </div>
+    </div>
+
+    <article class="container">
+        
+        <section class="intro-section">
+            <p class="lead-text">Flere og flere i Norge blir lurt på nett. Det kan være alt fra e-poster som ser ut som de kommer fra banken, SMS-meldinger som varsler om falske pakker, eller annonser på sosiale medier som lover raske penger.</p>
+        </section>
+
+        <section class="content-section" data-step="1">
+            <h2>En epidemi som vokser</h2>
+            <p>Svindlerne har blitt flinkere og flere mennesker blir rammet hvert år. Ifølge Økokrim ble det i Norge tapt minst 2,13 milliarder kroner i anmeldte bedragerisaker i 2024. Det som gjør dette spesielt utfordrende, er at mye av svindelen foregår på nett og kan utføres fra hvor som helst i verden.</p>
+        </section>
+
+        <div class="stat-card-grid">
+            <div class="stat-card" data-stat="1">
+                <div class="stat-card-number" id="lossAmount">864 mill kr</div>
+                <div class="stat-card-label">2020</div>
+            </div>
+            <div class="stat-card-arrow">→</div>
+            <div class="stat-card" data-stat="2">
+                <div class="stat-card-number highlight">2,13 mrd kr</div>
+                <div class="stat-card-label">2024</div>
+            </div>
+        </div>
+
+        <section class="content-section" data-step="2">
+            <h2>Phishing: Den vanligste metoden</h2>
+            <p>Den vanligste formen for nettsvindel i Norge i dag er phishing. Dette handler om at svindlere prøver å lure deg til å gi fra deg sensitiv informasjon som bankdetaljer og passord. Metoden er enkel, men veldig effektiv.</p>
+            <p>Mange mottar e-poster eller SMS-er som ser ut til å komme fra kjente selskaper som Posten, DNB, eller Skatteetaten. En undersøkelse fra Digi viser 70 prosent i Norge har opplevd phishing forsøk.</p>
+        </section>
+
+        <aside class="fact-box blue" data-fact="1">
+            <div class="fact-content">
+                <h3>Hva er phishing?</h3>
+                <p>Phishing er når svindlere utgir seg for å være en pålitelig avsender (bank, Posten, myndighetene) for å lure deg til å oppgi passord, bankdetaljer eller annen sensitiv informasjon. Dette skjer oftest via e-post eller SMS.</p>
+            </div>
+        </aside>
+
+        <section class="content-section" data-step="3">
+            <p>Phishing har også blitt mer avansert. I dag kan svindlere lage realistiske nettsider som ser identiske ut med bankenes egne sider. Ifølge Finanstilsynet førte slike forsøk til 116 495 kortsvindeltransaksjoner i 2024, og direkte kontooverføringer resulterte i et samlet tap på 376 millioner kroner bare i andre halvår av året.</p>
+        </section>
+
+        <div class="chart-section" data-chart="1">
+            <h3 class="section-title">Fordeling av typer nettsvindel i Norge (2024)</h3>
+            <div class="chart-wrapper">
+                <canvas id="distributionChart"></canvas>
+            </div>
+        </div>
+
+        <section class="content-section" data-step="4">
+            <p>Tallene viser at nettsvindel rammer stadig flere nordmenn. I en undersøkelse fra NorSIS oppgir over 1,2 millioner nordmenn at de har blitt svindlet for penger på internett. Det mest vanlige er at folk betaler for en vare eller tjeneste som de aldri mottar, men mange har også opplevd å tape penger ved å gi fra seg bankopplysninger til falske nettsider eller gjort investeringer som viste seg å være svindel.</p>
+        </section>
+
+        <aside class="fact-box red" data-fact="2">
+            <div class="fact-icon">⚠️</div>
+            <div class="fact-content">
+                <h3>Særlig utsatt</h3>
+                <p>Unge under 30 år er spesielt sårbare - over fire av ti har opplevd å bli svindlet på nett.</p>
+            </div>
+        </aside>
+
+        <section class="content-section" data-step="5">
+            <p>Det som gjør phishing så farlig, er at svindlerne spiller på våre følelser. De bruker sosial manipulering og får folk til å handle raskt, enten det er av frykt for at bankkontoen blir stengt, forventning om en pakke, eller fristelsen av raske penger. Når meldingene ser profesjonelle ut og kommer fra det som virker som troverdige avsendere, blir det vanskelig å skille mellom ekte og falsk.</p>
+        </section>
+
+        <section class="content-section" data-step="6">
+            <h2>Kunstig intelligens: En ny trussel</h2>
+            <p>Utviklingen av kunstig intelligens de siste årene gjør falske meldinger og videoer mer troverdig. Teknologien er både lett tilgjengelig og billig, noe som gjør at flere kriminelle nå bruker den i svindel og datakriminalitet.</p>
+            <p>Kunstig intelligens kan brukes til å lage falske stemmer, bilder og videoer, også kjent som «deepfakes». Det betyr at en svindler kan etterligne seg for å være en leder i et firma, kollega eller et familiemedlem, og på den måten lure noen til å sende penger eller gi sensitiv informasjon.</p>
+        </section>
+
+        <aside class="fact-box purple" data-fact="3">
+            <div class="fact-content">
+                <h3>AI og svindel</h3>
+                <p>Svindeleksperter i Nordea og Europol forventer at bruken av kunstig intelligens i svindel vil utvikle seg mer i årene som kommer. AI kan brukes til å skrive meldinger på perfekt norsk og tilpasse innholdet til mottakeren, slik at meldingene virker mer ekte enn før.</p>
+                <p>Tidligere var dårlig språk eller rare formuleringer ofte et tegn på svindel, men nå kan slike meldinger se profesjonelle ut og virke menneskelig skrevet.</p>
+            </div>
+        </aside>
+
+        <section class="content-section" data-step="7">
+            <h2>Tapene øker dramatisk</h2>
+            <p>Tapene fra nettsvindel øker år for år. Ifølge Økokrim har utbyttet fra anmeldte bedragerier økt fra 864 millioner kroner i 2020 til hele 2,13 milliarder kroner i 2024. Dette er en økning på nesten 150 prosent på bare fire år.</p>
+            <p>Antall bedragerianmeldelser øker også kraftig. I 2021 anmeldte rundt 19 000 personer bedrageri, mens i 2023 var det opp til nesten 26 000 saker.</p>
+        </section>
+
+        <div class="chart-section" data-chart="2">
+            <h3 class="section-title">Samlede tap (millioner kr)</h3>
+            <div class="chart-wrapper">
+                <canvas id="lossChart"></canvas>
+            </div>
+        </div>
+
+        <section class="content-section" data-step="8">
+            <p>Undersøkelser viser at bare rundt en tredjedel av bedrageriofrene anmelder forholdet til politiet, noe som betyr at de faktiske tapene kan være tre ganger så høye. Over 70 prosent av alle anmeldte bedragerier i Norge er nå digitale, og svindlerne har blitt flinkere i metodene sine.</p>
+        </section>
+
+        <aside class="fact-box red" data-fact="4">
+            <div class="fact-content">
+                <h3>Viktig å huske</h3>
+                <p>Aldri del bankopplysninger via e-post eller SMS. Banker og offentlige etater vil aldri be deg om passord eller BankID-koder på denne måten.</p>
+            </div>
+        </aside>
+
+        <section class="sources">
+            <h3>Kilder</h3>
+            <ul>
+                <li>Økokrim (2024). Nordmenn svindlet for over 2 milliarder kroner.</li>
+                <li>Finanstilsynet (2024). Svindelstatistikk andre halvår 2024.</li>
+                <li>NorSIS (2024). Digital sikkerhetskultur 2024.</li>
+                <li>Digi.no (2020). Undersøkelse: 70 prosent i Norge sier at de har blitt utsatt for phishing.</li>
+                <li>NTB Kommunikasjon (2023). 1,2 millioner nordmenn har blitt svindlet på nett.</li>
+                <li>Gjensidige (2023). Bruker KI i svindelforsøk mot bedrifter: – Vanskeligere å avsløre</li>
+            </ul>
+        </section>
+
+    </article>
+</main>
+
+<script>
+    const scroller = scrollama();
+
+    // Sidebar visibility
+    window.addEventListener('scroll', () => {
+        const sidebar = document.getElementById('sidebarStats');
+        if (window.scrollY > 800) {
+            sidebar.classList.add('visible');
+        } else {
+            sidebar.classList.remove('visible');
+        }
+    });
+
+    scroller
+        .setup({
+            step: '.content-section, .stat-card-grid, .fact-box, .chart-section',
+            offset: 0.65,
+            debug: false
+        })
+        .onStepEnter(response => {
+            response.element.classList.add('visible');
+            
+            if (response.element.dataset.stat === '1') {
+                animateStatCards();
+            }
+            
+            if (response.element.dataset.chart === '1') {
+                setTimeout(() => createPieChart(), 300);
+            }
+            
+            if (response.element.dataset.chart === '2') {
+                setTimeout(() => createLineChart(), 300);
+            }
+        });
+
+    function animateStatCards() {
+        const lossEl = document.getElementById('lossAmount');
+        const card = lossEl.closest('.stat-card');
+        let current = 864;
+        const target = 2130;
+        const duration = 2500;
+        const steps = 80;
+        const increment = (target - current) / steps;
+        const stepDuration = duration / steps;
+
+        // Add zoom effect to cards
+        const cards = document.querySelectorAll('.stat-card');
+        cards.forEach((c, index) => {
+            setTimeout(() => {
+                c.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    c.style.transform = 'scale(1)';
+                }, 200);
+            }, index * 100);
+        });
+
+        // Spawn money particles
+        let particleInterval = setInterval(() => {
+            createMoneyParticle(card);
+        }, 150);
+
+        const interval = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(interval);
+                clearInterval(particleInterval);
+                lossEl.textContent = '2,13 mrd kr';
+                
+                // Warning flash effect
+                card.classList.add('warning-flash');
+                setTimeout(() => {
+                    card.classList.remove('warning-flash');
+                    card.classList.add('pulse');
+                }, 450);
+            } else {
+                lossEl.textContent = Math.round(current) + ' mill kr';
+            }
+        }, stepDuration);
+    }
+
+    function createMoneyParticle(container) {
+        const particle = document.createElement('div');
+        particle.className = 'money-particle';
+        particle.textContent = '💸';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = '30%';
+        container.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 2000);
+    }
+
+    let pieChartInstance = null;
+    function createPieChart() {
+        if (pieChartInstance) return;
+        
+        const ctx = document.getElementById('distributionChart').getContext('2d');
+        pieChartInstance = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Phishing (40%)', 'Investeringssvindel (30%)', 'Netthandelssvindel (20%)', 'Annet (10%)'],
+                datasets: [{
+                    data: [40, 30, 20, 10],
+                    backgroundColor: ['#ef4444', '#10b981', '#6366f1', '#f59e0b'],
+                    borderWidth: 3,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    animateRotate: true,
+                    animateScale: true,
+                    duration: 2000,
+                    easing: 'easeOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 14, family: "'IBM Plex Sans', sans-serif" },
+                            padding: 20,
+                            boxWidth: 20,
+                            boxHeight: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    let lineChartInstance = null;
+    function createLineChart() {
+        if (lineChartInstance) return;
+        
+        const ctx = document.getElementById('lossChart').getContext('2d');
+        
+        // Animate line drawing
+        const data = [260, 340, 380, 410, 520, 610];
+        const animatedData = [0, 0, 0, 0, 0, 0];
+        
+        lineChartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['H1 2022', 'H2 2022', 'H1 2023', 'H2 2023', 'H1 2024', 'H2 2024'],
+                datasets: [{
+                    label: 'Tap i millioner kr',
+                    data: animatedData,
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#ef4444',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 3,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                animation: {
+                    duration: 2500,
+                    easing: 'easeOutQuart'
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' millioner kr';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + ' mill';
+                            },
+                            font: { family: "'IBM Plex Sans', sans-serif" }
+                        },
+                        grid: { color: 'rgba(0, 0, 0, 0.05)' }
+                    },
+                    x: {
+                        ticks: { font: { family: "'IBM Plex Sans', sans-serif" } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Animate data points appearing
+        data.forEach((value, index) => {
+            setTimeout(() => {
+                lineChartInstance.data.datasets[0].data[index] = value;
+                lineChartInstance.update('active');
+            }, index * 300);
+        });
+    }
+
+    window.addEventListener('resize', scroller.resize);
+</script>
+
+</body>
+</html>
