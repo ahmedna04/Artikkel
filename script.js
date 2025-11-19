@@ -92,7 +92,7 @@ scroller
     })
     .onStepEnter(response => {
         response.element.classList.add('visible');
-        
+
         // Animate stat cards when they become visible
         if (response.element.classList.contains('stats-grid')) {
             const statCards = response.element.querySelectorAll('.stat-card');
@@ -142,26 +142,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========== LAZY LOAD IMAGES ==========
-const images = document.querySelectorAll('img');
-const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.style.opacity = '0';
-            img.style.transition = 'opacity 0.6s ease';
-            
-            img.addEventListener('load', () => {
-                img.style.opacity = '1';
-            });
-            
-            observer.unobserve(img);
-        }
-    });
-}, {
-    rootMargin: '50px'
-});
+// const images = document.querySelectorAll('img');
+// const imageObserver = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             const img = entry.target;
+//             img.style.opacity = '0';
+//             img.style.transition = 'opacity 0.6s ease';
+//
+//             img.addEventListener('load', () => {
+//                 img.style.opacity = '1';
+//             });
+//
+//             observer.unobserve(img);
+//         }
+//     });
+// }, {
+//     rootMargin: '50px'
+// });
 
-images.forEach(img => imageObserver.observe(img));
+// images.forEach(img => imageObserver.observe(img));
 
 // ========== RESIZE HANDLER ==========
 let resizeTimer;
