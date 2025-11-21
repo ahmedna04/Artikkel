@@ -1,17 +1,4 @@
-// Initialize Scrollama
 const scroller = scrollama();
-
-// ========== PROGRESS BAR ==========
-const progressBar = document.getElementById('progressBar');
-
-function updateProgressBar() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    progressBar.style.width = scrolled + '%';
-}
-
-window.addEventListener('scroll', updateProgressBar);
 
 // ========== PARALLAX HERO ==========
 const hero = document.getElementById('hero');
@@ -51,25 +38,14 @@ function animateFloatingStats() {
     
     statNums.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 60;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                stat.textContent = target.toLocaleString();
-                clearInterval(timer);
-            } else {
-                stat.textContent = Math.floor(current).toLocaleString();
-            }
-        }, 20);
+        animateCounter(stat, 0, target, 1500);
     });
 }
 
 window.addEventListener('scroll', checkFloatingStats);
 
-// ========== ANIMATED COUNTER FOR STATS GRID ==========
-function animateValue(element, start, end, duration) {
+// ========== COUNTER ANIMATION ==========
+function animateCounter(element, start, end, duration) {
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
@@ -86,24 +62,16 @@ function animateValue(element, start, end, duration) {
 // ========== SCROLLAMA SETUP ==========
 scroller
     .setup({
-        step: '.fade-in-up, .fade-in-scale, .slide-in-left, .slide-in-right',
-        offset: 0.7,
+        step: '.scroll-section',
+        offset: 0.6,
         debug: false
     })
     .onStepEnter(response => {
-        response.element.classList.add('visible');
-
-        // Animate stat cards when they become visible
-        if (response.element.classList.contains('stats-grid')) {
-            const statCards = response.element.querySelectorAll('.stat-card');
-            statCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                    const statNumber = card.querySelector('.stat-number');
-                    const target = parseInt(statNumber.getAttribute('data-count'));
-                    animateValue(statNumber, 0, target, 1500);
-                }, index * 200);
-            });
+        response.element.classList.add('active');
+    })
+    .onStepExit(response => {
+        if (response.direction === 'up') {
+            response.element.classList.remove('active');
         }
     });
 
@@ -225,13 +193,4 @@ window.addEventListener('resize', () => {
     resizeTimer = setTimeout(() => {
         scroller.resize();
     }, 250);
-});
-
-// ========== INITIAL LOAD ANIMATION ==========
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
 });
