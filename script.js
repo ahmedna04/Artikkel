@@ -1,6 +1,16 @@
 const scroller = scrollama();
 
-// ========== PARALLAX HERO ==========
+const progressBar = document.getElementById('progressBar');
+
+function updateProgressBar() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + '%';
+}
+
+window.addEventListener('scroll', updateProgressBar);
+
 const hero = document.getElementById('hero');
 
 window.addEventListener('scroll', () => {
@@ -13,7 +23,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ========== FLOATING STATS ==========
 const floatingStats = document.getElementById('floatingStats');
 let statsAnimated = false;
 
@@ -38,14 +47,24 @@ function animateFloatingStats() {
     
     statNums.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-target'));
-        animateCounter(stat, 0, target, 1500);
+        let current = 0;
+        const increment = target / 60;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                stat.textContent = target.toLocaleString();
+                clearInterval(timer);
+            } else {
+                stat.textContent = Math.floor(current).toLocaleString();
+            }
+        }, 20);
     });
 }
 
 window.addEventListener('scroll', checkFloatingStats);
 
-// ========== COUNTER ANIMATION ==========
-function animateCounter(element, start, end, duration) {
+function animateValue(element, start, end, duration) {
     let startTimestamp = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
@@ -59,23 +78,28 @@ function animateCounter(element, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-// ========== SCROLLAMA SETUP ==========
 scroller
     .setup({
-        step: '.scroll-section',
-        offset: 0.6,
+        step: '.fade-in-up, .fade-in-scale, .slide-in-left, .slide-in-right',
+        offset: 0.7,
         debug: false
     })
     .onStepEnter(response => {
-        response.element.classList.add('active');
-    })
-    .onStepExit(response => {
-        if (response.direction === 'up') {
-            response.element.classList.remove('active');
+        response.element.classList.add('visible');
+
+        if (response.element.classList.contains('stats-grid')) {
+            const statCards = response.element.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('visible');
+                    const statNumber = card.querySelector('.stat-number');
+                    const target = parseInt(statNumber.getAttribute('data-count'));
+                    animateValue(statNumber, 0, target, 1500);
+                }, index * 200);
+            });
         }
     });
 
-// ========== BACK TO TOP BUTTON ==========
 const backToTop = document.getElementById('backToTop');
 
 function checkBackToTop() {
@@ -95,11 +119,31 @@ backToTop.addEventListener('click', () => {
 
 window.addEventListener('scroll', checkBackToTop);
 
-// ========== RESIZE HANDLER ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
         scroller.resize();
     }, 250);
+});
+
+window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
 });
