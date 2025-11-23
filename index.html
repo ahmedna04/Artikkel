@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -18,20 +19,7 @@
 </header>
 
 <main>
-    <div class="floating-stats" id="floatingStats">
-        <div class="stat-item">
-            <span class="stat-num" data-target="10300">0</span>
-            <span class="stat-label">Nederlendere</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-            <span class="stat-num" data-target="49">0</span>
-            <span class="stat-label">Uker permisjon</span>
-        </div>
-    </div>
-
     <article class="container">
-        
         <section class="scroll-section" data-step="1">
             <h2>Flukt fra stresset</h2>
             <p>«Alt går mer relaxed her,» smiler Ilse Boeije (21) mens hun tar en slurk kaffe på kontoret sitt i Norge. For bare to år siden var hun en vanlig nederlandsk student som egentlig ville til Barcelona. Men livet hadde andre planer.</p>
@@ -41,7 +29,7 @@
                     <figcaption>Ilse Boeije (21), bosatt i Norge.</figcaption>
                 </figure>
             </div>
-            <p>Da veilederen fortalte at det beste alternativet hennes var Norge i stedet, sukket hun først. Deretter forelsket hun seg - både i en norsk gutt og i det norske livet. Det roligere tempoet, naturen rett utenfor byen og arbeidsdager som faktisk slutter klokka fire.</p>
+            <p>Da veilederen fortalte at det beste alternativet hennes var Norge i stedet, sukket hun først. Deretter forelsket hun seg, både i en norsk gutt og i det norske livet. Det roligere tempoet, naturen rett utenfor byen og arbeidsdager som faktisk slutter klokka fire.</p>
         </section>
 
         <div class="quote-section scroll-section" data-step="2">
@@ -51,7 +39,7 @@
 
         <section class="scroll-section" data-step="3">
             <h2>10 000 nederlendere kan ikke ta feil</h2>
-            <p>Ilse er langt fra alene. Ifølge SSB har rundt 10 300 personer med nederlandsk bakgrunn slått seg ned i Norge, og trenden bare øker. På jobbmesser i Nederland står norske arbeidsgivere og lokker med noe som høres ut som en drøm: Lavere barnehagekostnader, bedre foreldrepermisjon, og ikke minst, lønn som faktisk gjenspeiler arbeidet ditt.</p>
+            <p>Ilse er langt fra alene. Ifølge IMDi har rundt 10 300 personer med nederlandsk bakgrunn slått seg ned i Norge, og trenden bare øker. På jobbmesser i Nederland står norske arbeidsgivere og lokker med noe som høres ut som en drøm: Lavere barnehagekostnader, bedre foreldrepermisjon, og ikke minst, lønn som faktisk gjenspeiler arbeidet ditt.</p>
             <div id="chart-container" class="fade-in-up">
                 <canvas id="dutchImmigrantsChart"></canvas>
                 <p class="chart-source">
@@ -69,7 +57,7 @@
 
         <section class="scroll-section" data-step="5">
             <h2>Når mor sier nei (men egentlig mener ja)</h2>
-            <p>Ilses mor var skeptisk i begynnelsen. Men etter å ha sett datterens glede, ga hun etter. «Faren min syntes det var flott at jeg opplevde noe nytt,» sier Ilse. «Og selv om familien savner meg i juletiden, er det bare et par timer i fly hjem.»</p>
+            <p>Ilses mor var skeptisk i begynnelsen. Men etter å ha sett datterens glede, ga hun etter. «Faren min syntes det var flott at jeg opplevde noe nytt» sier Ilse. «Og selv om familien savner meg i juletiden, er det bare et par timer i fly hjem.»</p>
             <p>Nå har hun oppholdstillatelse, en jobb hun elsker, og planer om å bli i Norge permanent. Om fem år kan hun søke om statsborgerskap, selv om det betyr å si farvel til det nederlandske passet.</p>
         </section>
 
@@ -96,10 +84,6 @@
 
     </article>
 </main>
-
 <button class="back-to-top" id="backToTop" aria-label="Tilbake til toppen">↑</button>
-
-<script src="script.js"></script>
-
 </body>
 </html>

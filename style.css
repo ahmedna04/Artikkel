@@ -73,55 +73,6 @@ body {
     opacity: 0.95;
 }
 
-/* ========== FLOATING STATS ========== */
-.floating-stats {
-    position: fixed;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-.floating-stats.visible {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.floating-stats .stat-item {
-    text-align: center;
-    padding: 0.75rem 0;
-}
-
-.floating-stats .stat-num {
-    display: block;
-    font-size: 2rem;
-    font-weight: 800;
-    color: #10b981;
-}
-
-.floating-stats .stat-label {
-    font-size: 0.75rem;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    margin-top: 0.25rem;
-    display: block;
-}
-
-.floating-stats .stat-divider {
-    height: 2px;
-    background: #e5e7eb;
-    margin: 0.75rem 0;
-}
-
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -140,6 +91,17 @@ h2 {
 p {
     margin-bottom: 1.25rem;
     font-size: 1.05rem;
+}
+
+.content-section {
+    h2 {
+    font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
 }
 
 /* ========== SCROLL SECTIONS ========== */
@@ -182,7 +144,7 @@ p {
 
 .final-section {
     text-align: center;
-    margin: 4rem 0;
+    margin: 4rem 0  13rem;
     padding: 2rem;
     border-radius: 8px;
     position: relative;

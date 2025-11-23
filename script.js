@@ -13,36 +13,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// ========== FLOATING STATS ==========
-const floatingStats = document.getElementById('floatingStats');
-let statsAnimated = false;
-
-function checkFloatingStats() {
-    const scrollPos = window.pageYOffset;
-    const heroHeight = hero.offsetHeight;
-    
-    if (scrollPos > heroHeight + 200) {
-        floatingStats.classList.add('visible');
-        
-        if (!statsAnimated) {
-            animateFloatingStats();
-            statsAnimated = true;
-        }
-    } else {
-        floatingStats.classList.remove('visible');
-    }
-}
-
-function animateFloatingStats() {
-    const statNums = floatingStats.querySelectorAll('.stat-num');
-    
-    statNums.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-target'));
-        animateCounter(stat, 0, target, 1500);
-    });
-}
-
-window.addEventListener('scroll', checkFloatingStats);
 
 // ========== COUNTER ANIMATION ==========
 function animateCounter(element, start, end, duration) {
@@ -108,29 +78,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// ========== LAZY LOAD IMAGES ==========
-// const images = document.querySelectorAll('img');
-// const imageObserver = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//         if (entry.isIntersecting) {
-//             const img = entry.target;
-//             img.style.opacity = '0';
-//             img.style.transition = 'opacity 0.6s ease';
-//
-//             img.addEventListener('load', () => {
-//                 img.style.opacity = '1';
-//             });
-//
-//             observer.unobserve(img);
-//         }
-//     });
-// }, {
-//     rootMargin: '50px'
-// });
-
-// images.forEach(img => imageObserver.observe(img));
-
 
 // Statistikk Nederland innvandring:
 const yearlyData = {
